@@ -17,13 +17,13 @@
       <%= form.text_field :name %>
     </div>
 
-    <div data-preview-name-value="Wrapbook">
+    <div data-preview-name-value="Wrapbook" data-controller="preview">
       <div>
         <%= form.label :description, style: "display: block" %>
-        <%= form.textarea :description, data: {} %>
+        <%= form.textarea :description, data: { action: "preview#updateOutput", 'preview-target': 'input' } %>
       </div>
 
-      <div class="preview">
+      <div class="preview" data-preview-target="output">
         Generating...
       </div>
     </div>
