@@ -1,0 +1,354 @@
+/* Begin Reset - https://piccalil.li/blog/a-more-modern-css-reset/ */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+  width: 100%;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* End Reset - https://piccalil.li/blog/a-more-modern-css-reset/ */
+
+/* Variables */
+:root {
+  --color-wb-500: #4426bd;
+  --color-wb-400: #6733ff;
+  --color-wb-300: #8e7dff;
+  --color-wb-200: #e3dafe;
+  --color-wb-100: #f9f7ff;
+  --color-n-900: #282c2e;
+  --color-n-800: #3f4245;
+  --color-n-700: #54595c;
+  --color-n-600: #73777a;
+  --color-n-500: #8f9396;
+  --color-n-400: #a9adb0;
+  --color-n-300: #c1c6c9;
+  --color-n-200: #dfe3e5;
+  --color-n-100: #f6f8fa;
+  --color-n-0: #ffffff;
+  --color-s-500: #078a2e;
+  --color-s-400: #36c95b;
+  --color-s-300: #86f08c;
+  --color-s-200: #c3f7c9;
+  --color-s-100: #f0fdf2;
+  --color-a-500: #bd6604;
+  --color-a-400: #e8aa23;
+  --color-a-300: #f5c345;
+  --color-a-200: #ffe48c;
+  --color-a-100: #fff9e3;
+  --color-e-500: #c43012;
+  --color-e-400: #f2461b;
+  --color-e-300: #ff9359;
+  --color-e-200: #ffb37d;
+  --color-e-100: #ffece3;
+  --desktop-font-size: 1.2rem/1.55;
+  --mobile-font-size: 1rem/1.45;
+  --text-color: #2d2d2d;
+  --link-color: blue;
+  --link-color-alt: darkblue;
+  --secondary-color: aliceblue;
+  --tertiary-color: whitesmoke;
+}
+
+/* Typography */
+body {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-n-900);
+  margin: 0 auto;
+  max-width: 75ch;
+  padding: 0 0.5rem;
+}
+body, input {
+  font: var(--desktop-font-size) -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto, Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+h1,h2,h3,h4,h5,h6,p,blockquote,dl,img,figure {
+  margin: 0 0 2rem;
+}
+
+h1,h2,h3,h4,h5,h6 { font-weight: bold; line-height: 1.2; }
+h1 { font-size: 200%; }
+h2 { font-size: 150%; }
+h3 { font-size: 120%; }
+h4,h5,h6 { font-size: 100%; }
+h5, h6 { text-transform: uppercase; }
+
+header h1 { border-bottom: 1px solid; }
+
+a,a:visited { color: var(--color-wb-500); }
+a:hover,a:focus { color: var(--link-color-alt); }
+
+strong, time, b { font-weight: bold; }
+em, dfn, i { font-style: italic; }
+sub { font-size: 60%; vertical-align: bottom; }
+small { font-size: 80%; }
+
+blockquote, q {
+  background: var(--color-n-100);
+  border-left: 10px solid var(--color-wb-100);
+  display: block;
+  font-family: "Georgia", serif;
+  padding: 1rem;
+}
+blockquote p:first-child { margin-top: 0; }
+blockquote p:last-child { margin-bottom: 0; }
+cite {
+  font-family: "Georgia", serif;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+kbd,code,samp,pre,var { font: var(--mobile-font-size) monospace; }
+code, pre {
+  background: var(--tertiary-color);
+  border: 1px solid;
+  overflow: auto;
+  padding: 0.25rem 0.5rem;
+}
+code pre , pre code { border: 0; padding: 0; }
+
+/* Elements */
+hr {
+  background: var(--color-n-900);
+  border: 0;
+  height: 1px;
+  margin: 4rem 0;
+}
+
+img {
+  display: block;
+  height: auto; 
+  max-width: 100%; 
+}
+
+figure {
+  border: 1px solid var(--color-wb-100);
+  display: inline-block;
+  padding: 1rem;
+  width: 100%;
+}
+figure img { margin: 0 auto; }
+figure figcaption { font-size: 80%; margin-top: 0.5rem; text-align: center; }
+
+ul, ol { margin: 2rem 0; padding: 0 0 0 2rem; }
+ul li, ol li { margin-bottom: 1rem; }
+li > ul, li > ol { margin: 0.25rem 0 0.5rem; padding: 0 0 0 2rem; }
+li > ul li, li > ol li { margin-bottom: 0.5rem; }
+
+dl dd { padding-left: 2rem; }
+
+table {
+  border: 1px solid var(--color-wb-100);
+  border-collapse: collapse;
+  table-layout: fixed;
+  text-align: left;
+  width: 100%;
+}
+table caption { margin: 2rem 0; }
+table tr { border-bottom: 1px solid var(--color-wb-100); }
+table thead { position: sticky; top: 0; }
+table tbody tr:nth-child(even) { background: var(--tertiary-color); }
+table th { background: var(--color-n-100); font-weight: bold; }
+table th, table td { padding: 0.5rem; }
+
+input { 
+  /* appearance: none;  */
+  border: 1px solid var(--color-n-900);
+  display: block;
+  margin: 0;
+  padding: 0.25rem;
+}
+input:focus, input:active, textarea:focus, textarea:active { background-color: var(--color-n-100); border-color: var(--color-wb-500); }
+
+textarea {
+  margin: 0 0 2rem;
+  padding: 0.8rem;
+}
+
+sup { font-size: 80%; vertical-align: top; }
+
+/* Mobile Styling */
+@media screen and (max-width: 75ch) {
+  body, input {
+      font: var(--mobile-font-size) -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto, Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol";
+  }
+  table { table-layout: auto; }
+}
+
+body {
+  padding-top: 1rem;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--color-n-900);
+  padding-bottom: 0.5rem;
+}
+
+.preview {
+  background: var(--color-wb-100);
+  padding: 1rem;
+  border: 1px solid var(--color-wb-300);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--color-n-900);
+}
+
+.error {
+  border: 1px solid var(--color-e-500);
+  background: var(--color-e-100);
+}
+
+.card {
+  background: var(--color-wb-100);
+  padding: 1rem;
+  border: 1px solid var(--color-wb-300);
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  letter-spacing: 0;
+  color: var(--color-n-900);
+}
+
+.card >*:last-child {
+  margin-bottom: 0;
+}
+
+.project_search {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+.project_search input {
+  margin-bottom: 0;
+}
+
+.project_search input[type="submit"] {
+  margin-left: auto;
+}
+
+.project_search label {
+  padding-bottom: 0;
+  white-space: nowrap;
+}
+
+.project_search input:not([type="submit"]) {
+  width: 100%;
+}
+
+form {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.form-row--p-top {
+  padding-top: 2rem;
+}
+
+.form-row label {
+  padding-bottom: 0;
+  white-space: nowrap;
+}
+
+.form-row input[type="text"] {
+  width: 100%;
+  margin-left: 1rem;
+}
+
+input[type="submit"] {
+  background-color: var(--color-wb-400);
+  color: var(--color-n-0);
+  border: 0;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+input[type="submit"]:active {
+  background-color: var(--color-wb-500);
+}
