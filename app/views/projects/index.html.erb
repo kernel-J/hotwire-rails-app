@@ -4,14 +4,16 @@
 
 <p><%= link_to "New project", new_project_path %></p>
 
-<%= search_form_for @q do |f| %>
+<%= search_form_for @q, data: { "turbo-frame": "projects", "turbo-action": "replace" } do |f| %>
   <%= f.label :name_cont %>
   <%= f.search_field :name_cont %>
   <%= f.submit %>
 <% end %>
 
-<div class="cards" id="projects">
-  <% @projects.each do |project| %>
-    <%= render project %>
-  <% end %>
-</div>
+<turbo-frame id="projects">
+  <div class="cards" id="projects">
+    <% @projects.each do |project| %>
+      <%= render project %>
+    <% end %>
+  </div>
+</turbo-frame>
