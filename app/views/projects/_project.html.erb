@@ -1,12 +1,14 @@
-<div id="<%= dom_id(project) %>">
-  <div class="card">
-    <p>
-      <%= link_to project.name, [:edit, project], "data-turbo-frame": "_top" %>
-    </p>
+<turbo-frame id="edit-project">
+  <div id="<%= dom_id(project) %>">
+    <div class="card">
+      <p>
+        <%= link_to project.name, [:edit, project] %>
+      </p>
 
-    <p>
-      <%= project.active ? "Active" : "Inactive" %> /
-      <%= Project::UNIONS[project.union.to_sym] %>
-    </p>
+      <p>
+        <%= project.active ? "Active" : "Inactive" %> /
+        <%= Project::UNIONS[project.union.to_sym] %>
+      </p>
+    </div>
   </div>
-</div>
+</turbo-frame>

@@ -2,7 +2,9 @@
 
 <h1>Editing project</h1>
 
-<%= render "form", project: @project %>
+<turbo-frame id="edit-project">
+  <%= render "form", project: @project %>
+</turbo-frame>
 
 <br>
 
