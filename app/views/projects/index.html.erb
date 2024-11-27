@@ -2,7 +2,9 @@
 
 <h1>Projects</h1>
 
-<p><%= link_to "New project", new_project_path %></p>
+<p><%= link_to "New project", new_project_path, data: { turbo_frame: dom_id(Project.new) }%></p>
+
+<%= turbo_frame_tag Project.new %>
 
 <%= search_form_for @q, data: { "turbo-frame": "projects", "turbo-action": "replace" } do |f| %>
   <%= f.label :name_cont %>

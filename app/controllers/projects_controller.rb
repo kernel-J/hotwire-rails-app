@@ -24,12 +24,13 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
 
-    respond_to do |format|
-      if @project.save
+    if @project.save
+      respond_to do |format|
         format.html { redirect_to @project, notice: "Project was successfully created." }
-      else
-        format.html { render :new, status: :unprocessable_entity }
+        format.turbo_stream
       end
+    else
+      format.html { render :new, status: :unprocessable_entity }
     end
   end
 
@@ -50,6 +51,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to projects_path, status: :see_other, notice: "Project was successfully destroyed." }
+      format.turbo_stream
     end
   end
 
