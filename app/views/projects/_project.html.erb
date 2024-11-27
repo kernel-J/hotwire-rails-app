@@ -9,6 +9,9 @@
         <%= project.active ? "Active" : "Inactive" %> /
         <%= Project::UNIONS[project.union.to_sym] %>
       </p>
+      <p>
+        <%= link_to "delete", project, data: { turbo_method: :delete } %>
+      </p>
     </div>
   </div>
 </turbo-frame>
